@@ -25,9 +25,9 @@ has completed the full generation-and-verification loop.
 
 - Pipeline code: [q-matrix-agents](https://github.com/MaximusTitan/q-matrix-agents)
 - Knowledge-base template (the empty scaffold this data was grown from):
-  [q-matrix-kb-template](https://github.com/<you>/q-matrix-kb-template)
+  [q-matrix-kb-template](https://github.com/MaximusTitan/q-matrix-kb-template)
 - Graph viewer template (renders this dataset as an interactive 3D graph):
-  [q-matrix-graph-template](https://github.com/<you>/q-matrix-graph-template)
+  [q-matrix-graph-template](https://github.com/MaximusTitan/q-matrix-graph-template)
 
 ## What's included
 
