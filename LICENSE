@@ -1,0 +1,56 @@
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+SPDX-License-Identifier: CC-BY-SA-4.0
+
+Copyright (c) 2026 the dataset authors (see README.md's Citation section for the
+authoritative attribution text).
+
+This work — the curriculum CSVs under textbooks/ and the derived graph export under
+graph/ — is licensed under the Creative Commons Attribution-ShareAlike 4.0
+International License.
+
+You are free to:
+
+  Share   — copy and redistribute the material in any medium or format
+  Adapt   — remix, transform, and build upon the material
+
+for any purpose, even commercially, under the following terms:
+
+  Attribution   — You must give appropriate credit, provide a link to this license,
+                  and indicate if changes were made. You may do so in any reasonable
+                  manner, but not in any way that suggests the licensor endorses you
+                  or your use. See README.md's Citation section for the recommended
+                  attribution text for this dataset.
+
+  ShareAlike    — If you remix, transform, or build upon the material, you must
+                  distribute your contributions under the same license as the
+                  original.
+
+  No additional restrictions — You may not apply legal terms or technological
+                  measures that legally restrict others from doing anything the
+                  license permits.
+
+Notices:
+
+  You do not have to comply with the license for elements of the material in the
+  public domain or where your use is permitted by an applicable exception or
+  limitation.
+
+  No warranties are given. The license may not give you all of the permissions
+  necessary for your intended use. For example, other rights such as publicity,
+  privacy, or moral rights may limit how you use the material.
+
+This is a human-readable summary of (and not a substitute for) the full license. The
+complete legal text — which governs in the event of any conflict with the summary
+above — is available at:
+
+    https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+The license deed (a shorter, non-legal reference) is available at:
+
+    https://creativecommons.org/licenses/by-sa/4.0/
+
+Scope: this license applies to the derived curriculum data in this repository only
+(the CSVs under textbooks/ and the JSON files under graph/). It does not apply to,
+and does not grant any rights in, textbook or curriculum-document source material —
+none of which is included in this repository. See README.md's "What's explicitly
+excluded" section.

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-27T21:18:20+00:00",
+  "board": "CBSE",
+  "subjects": [
+    "Environmental Science",
+    "Maths",
+    "Science"
+  ],
+  "inventory": {
+    "Environmental Science": {
+      "Grade 3": {
+        "chapters": 12,
+        "concepts": 166
+      },
+      "Grade 4": {
+        "chapters": 10,
+        "concepts": 213
+      },
+      "Grade 5": {
+        "chapters": 10,
+        "concepts": 192
+      }
+    },
+    "Maths": {
+      "Grade 1": {
+        "chapters": 13,
+        "concepts": 137
+      },
+      "Grade 10": {
+        "chapters": 14,
+        "concepts": 138
+      },
+      "Grade 2": {
+        "chapters": 11,
+        "concepts": 140
+      },
+      "Grade 3": {
+        "chapters": 14,
+        "concepts": 207
+      },
+      "Grade 4": {
+        "chapters": 14,
+        "concepts": 215
+      },
+      "Grade 5": {
+        "chapters": 14,
+        "concepts": 163
+      },
+      "Grade 6": {
+        "chapters": 10,
+        "concepts": 186
+      },
+      "Grade 7": {
+        "chapters": 13,
+        "concepts": 169
+      },
+      "Grade 8": {
+        "chapters": 13,
+        "concepts": 132
+      },
+      "Grade 9": {
+        "chapters": 12,
+        "concepts": 133
+      }
+    },
+    "Science": {
+      "Grade 10": {
+        "chapters": 13,
+        "concepts": 328
+      },
+      "Grade 6": {
+        "chapters": 12,
+        "concepts": 278
+      },
+      "Grade 7": {
+        "chapters": 12,
+        "concepts": 256
+      },
+      "Grade 8": {
+        "chapters": 13,
+        "concepts": 329
+      },
+      "Grade 9": {
+        "chapters": 13,
+        "concepts": 387
+      }
+    }
+  },
+  "integrity": {
+    "chapterFiles": 223,
+    "rows": 7145,
+    "nodes": 3769,
+    "edges": 7448,
+    "edgesByLevel": {
+      "L1": 4272,
+      "L2": 612,
+      "L3": 2564
+    },
+    "derivedEdges": 1442,
+    "crossSubjectEdges": 156,
+    "crossGradeEdges": 2564,
+    "isolatedNodes": 214,
+    "cycles": {
+      "cyclicComponents": 88,
+      "nodesInCycles": 210,
+      "largestCycle": 7
+    },
+    "unresolvedRefs": 0,
+    "selfLoops": 0,
+    "warnings": [
+      "Maths/Grade 4/Chapter04_Thousands_Around_Us: chapter column says 'Chapter4_Tick-Tick-Tick' — using folder name",
+      "Maths/Grade 4/Chapter06_Measuring_Length: chapter column says 'Chapter6_The_Junk_Seller' — using folder name"
+    ]
+  }
+}
