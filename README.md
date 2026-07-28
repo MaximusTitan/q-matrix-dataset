@@ -29,6 +29,10 @@ has completed the full generation-and-verification loop.
 - Graph viewer template (renders this dataset as an interactive 3D graph):
   [q-matrix-graph-template](https://github.com/MaximusTitan/q-matrix-graph-template)
 
+## Paper
+
+This is the dataset released alongside *Curriculum Brain: A Semi-Automated Framework for Q-Matrix Creation* — [read the draft](https://prickly-gopher-95e.notion.site/Curriculum-Brain-3a3527ed7aee80cc97f7ee52e302249e).
+
 ## What's included
 
 ```
