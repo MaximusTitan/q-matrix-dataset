@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "Q-Matrix CBSE Curriculum Knowledge Graph Dataset"
+abstract: >-
+  A concept-and-skill knowledge graph derived from the CBSE curriculum, covering
+  Maths (grades 1-10), Science (grades 6-10), and Environmental Science
+  (grades 3-5). The dataset ships 223 per-chapter confirmed_curriculum.csv files
+  as the canonical layer, plus an exported graph of 3,769 concept nodes and 7,448
+  prerequisite edges across three levels: same-chapter, cross-chapter, and
+  prior-grade. Produced by the Q-Matrix multi-agent pipeline with a human in the
+  loop on escalation.
+authors:
+  - family-names: Tamboli
+    given-names: Shrideep
+    email: shrideep@prosoftpeople.com
+    affiliation: Intelliana
+repository-code: "https://github.com/MaximusTitan/q-matrix-dataset"
+license: CC-BY-SA-4.0
+version: 1.0.0
+keywords:
+  - curriculum-mapping
+  - knowledge-graph
+  - prerequisite-relations
+  - education-technology
+  - q-matrix
+  - cbse
+
+# ─── TODO (maintainer) ────────────────────────────────────────────────────────
+# `date-released` is intentionally omitted: v1.0 has no recorded release date in
+# this repo, and graph/meta.json ships `generatedAt: null`. Set it to the real
+# export/release date (YYYY-MM-DD) rather than a guess.
+#
+# There is an associated PAPER — "Curriculum Brain: A Semi-Automated Framework
+# for Q-Matrix Creation" — still in draft. Venue, year of record, and DOI are not
+# filled in because they do not exist yet; fabricating them would be worse than
+# omitting them. On publication, fill in and uncomment the block below. Once
+# `preferred-citation` is present, citation tools will prefer the paper over the
+# dataset entry above. Keep this in sync with q-matrix-agents/CITATION.cff.
+#
+# preferred-citation:
+#   type: article            # or: conference-paper / report / thesis
+#   title: "Curriculum Brain: A Semi-Automated Framework for Q-Matrix Creation"
+#   authors:
+#     - family-names: Tamboli
+#       given-names: Shrideep
+#       email: shrideep@prosoftpeople.com
+#       affiliation: Intelliana
+#   year: <YYYY>
+#   journal: "<journal name>"           # articles
+#   collection-title: "<proceedings>"   # conference papers
+#   doi: "<10.xxxx/xxxxx>"
+#   url: "<canonical URL>"
+# ──────────────────────────────────────────────────────────────────────────────

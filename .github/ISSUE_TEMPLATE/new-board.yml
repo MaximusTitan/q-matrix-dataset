@@ -1,0 +1,74 @@
+name: New board proposal
+description: Propose adding an entirely new board's curriculum
+title: "[board] "
+labels: ["new-board"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        New boards are welcome, and **Cambridge is the next planned addition**.
+
+        Please open this issue *before* starting work. Boards are large, and this
+        avoids two people doing the same thing. It's also where we settle the
+        grade-vocabulary question below, which doesn't have a standard answer yet.
+
+        Read [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md) first — especially the
+        rights attestation section.
+
+  - type: input
+    id: board
+    attributes:
+      label: Board
+      placeholder: Cambridge (IGCSE)
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Subjects and grades you plan to cover
+      description: Rough scope is fine. Partial coverage is acceptable and useful.
+    validations:
+      required: true
+
+  - type: textarea
+    id: grade_vocabulary
+    attributes:
+      label: How do this board's grade levels map to the `Grade N` convention?
+      description: >-
+        The existing layout assumes a CBSE-shaped `Grade N` folder name, and level-3
+        prerequisites mean "earlier grade, same subject". Boards using stages, years,
+        or forms need a mapping decided up front. Propose one.
+    validations:
+      required: true
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Source documents you'll work from
+      description: Syllabus documents, prescribed textbooks, official publications.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Rights
+      options:
+        - label: >-
+            I understand that "freely accessible" is not "freely redistributable", that
+            I will need to make the rights attestation in CONTRIBUTING.md when I open the
+            PR, and that I should structure and describe the curriculum rather than copy
+            protected text verbatim.
+          required: true
+
+  - type: checkboxes
+    id: exporter
+    attributes:
+      label: Known constraint
+      options:
+        - label: >-
+            I understand that the graph exporter currently hardcodes `BOARD = "CBSE"`, so
+            my board's CSVs will be valid and usable but will not appear in `graph/` until
+            that is generalised — and that I should not regenerate `graph/` in my PR.
+          required: true
