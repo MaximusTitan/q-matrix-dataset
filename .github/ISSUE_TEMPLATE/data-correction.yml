@@ -1,0 +1,60 @@
+name: Curriculum data correction
+description: Report something wrong in a concept, skill, or prerequisite edge
+title: "[data] "
+labels: ["data-correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Corrections are wanted here, including small ones. If you're comfortable
+        opening a pull request instead, that's welcome too — see
+        [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md). An issue is fine for
+        anything short of a diff.
+
+  - type: input
+    id: path
+    attributes:
+      label: File path
+      description: The `confirmed_curriculum.csv` this concerns.
+      placeholder: textbooks/CBSE/Maths/Grade 6/Chapter02_Lines_And_Angles/confirmed_curriculum.csv
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of correction?
+      options:
+        - Concept is wrong, misnamed, or doesn't belong
+        - Skill is wrong, misnamed, or doesn't belong
+        - Prerequisite edge is wrong or missing
+        - Concept or skill is missing entirely
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: What it currently says
+      description: Paste the relevant row or cell.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed
+    attributes:
+      label: What it should say
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: >-
+        How do you know? Name the syllabus document, textbook chapter, or board
+        publication. Prerequisite edges are the least-verified layer in this dataset,
+        so a citation matters most there.
+    validations:
+      required: true

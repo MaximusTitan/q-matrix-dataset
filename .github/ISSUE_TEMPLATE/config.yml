@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contributing guide
+    url: https://github.com/MaximusTitan/q-matrix-dataset/blob/main/CONTRIBUTING.md
+    about: How to correct existing data, add a new board, and what the rights attestation requires.
+  - name: Paper draft — Curriculum Brain
+    url: https://prickly-gopher-95e.notion.site/Curriculum-Brain-3a3527ed7aee80cc97f7ee52e302249e
+    about: The method behind this dataset.
+  - name: Pipeline code (q-matrix-agents)
+    url: https://github.com/MaximusTitan/q-matrix-agents/issues
+    about: Bugs in the generation pipeline or the graph exporter belong there, not here.

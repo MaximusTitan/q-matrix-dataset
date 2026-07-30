@@ -9,6 +9,27 @@
 knowledge base at export time (see `graph/meta.json` for the exact export timestamp). It
 will not update itself; a future version bump is a separate, deliberate release.
 
+## Contributions welcome — this is the repo that takes them
+
+Of the four Q-Matrix repos, **this is the one that is open for community contribution and
+maintained collaboratively.** Corrections to the curriculum data are wanted here,
+including small ones, and so are entirely new boards. Start with
+**[CONTRIBUTING.md](CONTRIBUTING.md)** — it documents the real schema, the review process,
+and the rights attestation every data PR needs.
+
+The other three — [q-matrix-agents](https://github.com/MaximusTitan/q-matrix-agents),
+[q-matrix-kb-template](https://github.com/MaximusTitan/q-matrix-kb-template),
+[q-matrix-graph-template](https://github.com/MaximusTitan/q-matrix-graph-template) — are
+open source but are **not seeking pull requests**. Issues there are welcome; PRs are not.
+
+**Roadmap.** **Cambridge is the next planned board.** Two kinds of contribution are equally
+valuable: improving the existing CBSE data (prerequisite edges especially — see
+[Provenance](#provenance) for why they are the weakest layer), and adding a new board end
+to end. If you want to take on a whole board, open an issue first so the work isn't
+duplicated.
+
+Participation is governed by [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+
 ## What this is
 
 Q-Matrix is an agent pipeline that reads curriculum PDFs and board documentation for a
@@ -31,7 +52,9 @@ has completed the full generation-and-verification loop.
 
 ## Paper
 
-This is the dataset released alongside *Curriculum Brain: A Semi-Automated Framework for Q-Matrix Creation* — [read the draft](https://prickly-gopher-95e.notion.site/Curriculum-Brain-3a3527ed7aee80cc97f7ee52e302249e).
+This is the dataset released alongside *Curriculum Brain: A Semi-Automated Framework for
+Q-Matrix Creation* —
+[read the draft](https://prickly-gopher-95e.notion.site/Curriculum-Brain-3a3527ed7aee80cc97f7ee52e302249e).
 
 ## What's included
 
@@ -42,6 +65,8 @@ q-matrix-dataset/
 │   ├── graph-core.json          ← concept nodes + prerequisite edges
 │   ├── concept-details.json     ← per-concept skills + prerequisite rationales
 │   └── meta.json                ← provenance, per-grade inventory, integrity report
+├── CONTRIBUTING.md              ← how to propose data corrections / add a board
+├── CODE_OF_CONDUCT.md
 ├── LICENSE
 └── README.md
 ```
@@ -49,6 +74,12 @@ q-matrix-dataset/
 The `Board/Subject/Grade/Chapter` directory structure mirrors the source knowledge base
 exactly, so paths are stable and greppable — e.g.
 `textbooks/CBSE/Maths/Grade 6/Chapter02_Lines_And_Angles/confirmed_curriculum.csv`.
+
+Two inherited naming inconsistencies to be aware of when globbing: zero-padding of the
+chapter number varies (`Chapter5_Lines_And_Angles` next to
+`Chapter05_Arithmetic_Progressions`), and the 13 chapters under
+`textbooks/CBSE/Maths/Grade 1/` are bare `Chapter 1` … `Chapter 13` with no titles. Match
+on `confirmed_curriculum.csv` rather than on a chapter-folder pattern.
 
 ### The graph export is derived, not canonical
 
@@ -99,7 +130,8 @@ account for here even where a concept name repeats verbatim across chapters.)
 Science (G6–10) chapter present in the source KB's `textbooks/` tree has reached confirmed
 status — there is no "attempted but not yet confirmed" gap inside this scope.
 
-**Explicitly NOT covered**, and not planned for this release:
+**Explicitly NOT covered** in this release (Cambridge is the next planned board, and
+contributions of new boards are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md)):
 - Any subject other than Maths, Environmental Science, Science (no Hindi, English,
   Social Science, or ICT chapters exist in confirmed form in the source KB).
 - Any board other than CBSE.
@@ -110,7 +142,7 @@ status — there is no "attempted but not yet confirmed" gap inside this scope.
 
 ## Schema
 
-Every `confirmed_curriculum.csv` shares one 12-column header:
+The full header is 12 columns:
 
 | Column | Type | Description |
 |---|---|---|
@@ -127,7 +159,14 @@ Every `confirmed_curriculum.csv` shares one 12-column header:
 | `prereq_concepts_L3_prior_grade` | JSON array (as text) | Concept-level prerequisites from **an earlier grade, same subject** (Science's L3 prerequisites may resolve into Environmental Science for Grades 3–5, since CBSE only introduces Science as its own subject from Grade 6). Each entry: `{"grade": "<grade>", "chapter": "<chapter>", "concept": "<concept>", "reason": "<why>"}`. |
 | `prereq_skills_L3_prior_grade` | JSON array (as text) | Same shape, at skill granularity. |
 
-All four prerequisite columns are read the same way by the graph exporter: parsed as
+**198 of the 223 files carry all 12 columns. The remaining 25 carry only the first 10**,
+omitting `prereq_concepts_L3_prior_grade` and `prereq_skills_L3_prior_grade` — these are
+the earliest grade of each subject, where no prior grade exists to reference: the 13
+chapters under `textbooks/CBSE/Maths/Grade 1/` and the 12 under
+`textbooks/CBSE/Environmental Science/Grade 3/`. An absent L3 column and an empty L3 cell
+mean the same thing to the exporter.
+
+All six prerequisite columns are read the same way by the graph exporter: parsed as
 JSON, `[]`/blank means "none found at this level for this row," and a reference is
 resolved by exact name match scoped to the level's stated (grade, chapter) — there are no
 IDs in the CSVs themselves; `graph/graph-core.json` mints them.
@@ -168,7 +207,8 @@ trust any individual edge.
 
 **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).**
 
-Full text: [LICENSE](./LICENSE) · Canonical legal code:
+Full legal code: [LICENSE](./LICENSE) · Plain-language summary:
+[LICENSE-SUMMARY.md](./LICENSE-SUMMARY.md) · Canonical upstream:
 https://creativecommons.org/licenses/by-sa/4.0/legalcode
 
 You are free to share and adapt this dataset for any purpose, including commercially,
@@ -187,7 +227,7 @@ source material, which is deliberately not included here (see
 
 ```bash
 # 1. Clone the viewer
-git clone https://github.com/<you>/q-matrix-graph-template.git
+git clone https://github.com/MaximusTitan/q-matrix-graph-template.git
 cd q-matrix-graph-template
 npm install
 
@@ -215,25 +255,41 @@ kind of CSV edit costs to re-export lives in `q-matrix-graph-template`'s own REA
 If you use this dataset, please cite both the accompanying paper and this dataset
 release.
 
-**Paper** *(fill in once available — do not cite a placeholder as final)*:
+**This dataset** — this is the authoritative attribution text referenced by
+[LICENSE](LICENSE), and it is machine-readable in [CITATION.cff](CITATION.cff):
 
 ```
-<Author(s)>. (<Year>). <Paper title>. <Venue / arXiv id>.
+Tamboli, Shrideep. (2026). Q-Matrix CBSE Curriculum Knowledge Graph Dataset, v1.0.
+https://github.com/MaximusTitan/q-matrix-dataset. Licensed CC BY-SA 4.0.
 ```
 
-**This dataset**:
+**Paper** — the draft is [Curriculum Brain: A Semi-Automated Framework for Q-Matrix
+Creation](https://prickly-gopher-95e.notion.site/Curriculum-Brain-3a3527ed7aee80cc97f7ee52e302249e).
+It is unpublished, so there is no venue, year of record, or DOI to cite yet. Cite the
+dataset above until there is; this section will be updated on publication.
 
-```
-<Author(s) / organization>. (2026). Q-Matrix CBSE Curriculum Knowledge Graph Dataset,
-v1.0. <repository URL>. Licensed CC BY-SA 4.0.
-```
+## Contributing
 
-Replace the bracketed placeholders with your actual author list, paper venue, and
-published repository URL before release — nothing above should ship as-is.
+See **[CONTRIBUTING.md](CONTRIBUTING.md)**. Short version: the CSVs under `textbooks/` are
+the canonical data and the thing to edit; `graph/` is regenerated, never hand-edited; every
+data PR needs a rights attestation, and "freely accessible" is not "freely
+redistributable". Prerequisite edges are the least-verified layer and the highest-value
+thing to correct. Issues are open for anything short of a diff.
+
+## Related repositories
+
+| Repo | What it is | Takes PRs? |
+|---|---|---|
+| [q-matrix-agents](https://github.com/MaximusTitan/q-matrix-agents) | The multi-agent pipeline that produced this data | No — issues only |
+| [q-matrix-kb-template](https://github.com/MaximusTitan/q-matrix-kb-template) | Empty knowledge-base scaffold to run the pipeline against | No — issues only |
+| [q-matrix-graph-template](https://github.com/MaximusTitan/q-matrix-graph-template) | Interactive 3D viewer for this dataset | No — issues only |
+| **q-matrix-dataset** (this repo) | The curriculum dataset | **Yes** |
+
+Paper draft: [Curriculum Brain](https://prickly-gopher-95e.notion.site/Curriculum-Brain-3a3527ed7aee80cc97f7ee52e302249e)
 
 ## Versioning
 
-This is **v1.0** — a single point-in-time snapshot, generated from
-`q-matrix-kb` at export timestamp `graph/meta.json.generatedAt`. There is no live sync
+This is **v1.0** — a single point-in-time snapshot, generated from the source knowledge
+base at export timestamp `graph/meta.json.generatedAt`. There is no live sync
 between this repo and the source knowledge base; a future snapshot (v1.1, v2.0, …) would
 be a new, deliberate export and release, not an automatic update.
