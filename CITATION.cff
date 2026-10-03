@@ -13,8 +13,10 @@ abstract: >-
 authors:
   - family-names: Tamboli
     given-names: Shrideep
-    email: shrideep@prosoftpeople.com
-    affiliation: Intelliana
+    affiliation: AI Ready School
+  - family-names: Maddala
+    given-names: Chiranjeevi
+    affiliation: AI Ready School
 repository-code: "https://github.com/MaximusTitan/q-matrix-dataset"
 license: CC-BY-SA-4.0
 version: 1.0.0
@@ -44,8 +46,10 @@ keywords:
 #   authors:
 #     - family-names: Tamboli
 #       given-names: Shrideep
-#       email: shrideep@prosoftpeople.com
-#       affiliation: Intelliana
+#       affiliation: AI Ready School
+#     - family-names: Maddala
+#       given-names: Chiranjeevi
+#       affiliation: AI Ready School
 #   year: <YYYY>
 #   journal: "<journal name>"           # articles
 #   collection-title: "<proceedings>"   # conference papers
