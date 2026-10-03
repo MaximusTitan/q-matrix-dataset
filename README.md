@@ -259,7 +259,7 @@ release.
 [LICENSE](LICENSE), and it is machine-readable in [CITATION.cff](CITATION.cff):
 
 ```
-Tamboli, Shrideep. (2026). Q-Matrix CBSE Curriculum Knowledge Graph Dataset, v1.0.
+Tamboli, Shrideep, and Maddala, Chiranjeevi. (2026). Q-Matrix CBSE Curriculum Knowledge Graph Dataset, v1.0.
 https://github.com/MaximusTitan/q-matrix-dataset. Licensed CC BY-SA 4.0.
 ```
 
